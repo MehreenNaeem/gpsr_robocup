@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="gpsr_robocup" name="gpsrSub" type="Subcriber_cram_msg.py"/>
+    <node pkg="gpsr_robocup" name="gpsrMain" type="Mainaudiowhisper.py"/>
+</launch>
