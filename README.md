@@ -30,4 +30,24 @@ pip install -U openai-whisper
 ´´´
 sudo apt install python3-nltk
 ´´´
+-> PyDub
+´´´
+pip install pydub
+´´´
+-> Play Sound
+´´´
+pip install playsound
+´´´
+-> Speech Recognition
+´´´
+pip install SpeechRecognition
+´´´
+-> Gtts
+´´´
+pip install gTTS
+´´´
+-> pyAudio
+´´´
+sudo apt install python3-pyaudio
+´´´
 
