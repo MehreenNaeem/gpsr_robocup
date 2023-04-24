@@ -21,3 +21,8 @@ rasa run --enable-api
 ### If you need to add words in vocabulary
 -> check https://github.com/MehreenNaeem/GPSR_RASA
 
+### install python dependencies
+-> Whispher ´´´
+https://github.com/openai/whisper
+´´´
+-> NLTK sudo apt install python3-nltk
