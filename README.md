@@ -18,5 +18,6 @@ run the rasa
 ``` 
 rasa run --enable-api
 ```
-
+### If you need to add words in vocabulary
+-> check https://github.com/MehreenNaeem/GPSR_RASA
 
