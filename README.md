@@ -44,8 +44,10 @@ Gtts :
 PyAudio :
 ```sudo apt install python3-pyaudio```
 
-## How to Run GPSR_NLP
-### CRAM
+## How to Run GPSR_NLP 
+### RASA
+run the rasa
+### CRAM 
 launch the cram package:
 ```
 roslaunch cram_bullet_world_tutorial world.launch
@@ -60,4 +62,7 @@ listen the topics from the python scripts
 ```
 DEMO> (listener "chatter")
 ```
- 
+### Launch NLP python script 
+go into the workspace and launch gpsr_robocup package
+roslaunch gpsr_robocup launch_all.xml
+
