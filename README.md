@@ -84,7 +84,7 @@ gpsr_robocup$ rosrun gpsr_robocup testingf.py
 TODO(make it work for multi commands)
 
 ## Some Stuff related to Cram
-GPSR-NLP is using cram_pr2_pick_place_demo package.
+GPSR-NLP is using cram_pr2_pick_place_demo package. Following are the files that are related to it
 
 gpsr-ln.lisp (listen the data from python script)
 
