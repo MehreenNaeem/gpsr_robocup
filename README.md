@@ -63,7 +63,10 @@ listen the topics from the python scripts
 DEMO> (listener "chatter")
 ```
 ### Launch NLP python script 
-go into the workspace and launch gpsr_robocup package
+go into the workspace and launch gpsr_robocup package (if you want to give command by audio)
 ```
 roslaunch gpsr_robocup launch_all.xml
+```
+For testing purpose (if you want to give command in text form). 
+In directory gpsr_robocup, run the following nodes
 ```
