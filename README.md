@@ -58,15 +58,18 @@ CL-USER> (asdf:load-system :cram-pr2-pick-place-demo)
 DEMO> (in-package :demo)
 DEMO> (roslisp-utilities:startup-ros)
 ```
-listen the topics from the python scripts
+Listen the topics from the python scripts
 ```
 DEMO> (listener "chatter")
 ```
 ### Launch NLP python script 
-go into the workspace and launch gpsr_robocup package (if you want to give command by audio)
+Go into the workspace and launch gpsr_robocup package (if you want to give command by audio)
 ```
 roslaunch gpsr_robocup launch_all.xml
 ```
-For testing purpose (if you want to give command in text form). 
-In directory gpsr_robocup, run the following nodes
+For testing purpose (if you want to give command in text form).
+Open the file gpsr_robocup/scripts/testingf.py. Enter the text and save it.
+In terminal, go into the directory gpsr_robocup, run the following node
+```
+gpsr_robocup$ rosrun gpsr_robocup testingf.py
 ```
