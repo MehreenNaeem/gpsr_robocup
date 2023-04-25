@@ -68,7 +68,8 @@ Listen the topics from the python scripts
 ```
 DEMO> (listener "chatter")
 ```
-### Launch NLP python script 
+### Launch NLP python script
+
 Go into the workspace and launch gpsr_robocup package (if you want to give command by audio)
 ```
 roslaunch gpsr_robocup launch_all.xml
@@ -79,4 +80,15 @@ In terminal, go into the directory gpsr_robocup, run the following node
 ```
 gpsr_robocup$ rosrun gpsr_robocup testingf.py
 ```
+(currently it only takes one command. so for new command kill the launch file and launch it again)
+TODO(make it work for multi commands)
+
+## Some Stuff for Cram user
+For GPSR using cram_pr2_pick_place_demo.
+gpsr-ln.lisp (listen the data from python script)
+gpsr-plans.lisp (plans are defined in it)
+gpsr-pub.lisp (publish the data about plans)
+
+So the data send in a formate of string array which has following slot division:
+[plan_name object_name object_type person_name]
 
