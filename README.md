@@ -111,3 +111,4 @@ if you want to add plans:
 			(cram-talker "deliver")
 			)
 ```
+here plan title is DELIVER and plan-function is delivering-object (Note that plan title is the name of intent defined in RASA)
