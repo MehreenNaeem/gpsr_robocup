@@ -6,26 +6,6 @@ import requests
 import json
 import pydub
 
-#def whisper_decoding():
-    ####### Wishper... convert speech to text #### into multi langauge translator model
-#    model = whisper.load_model("small")
-    # load audio and pad/trim it to fit 30 seconds
-#    audio = whisper.load_audio("output.wav")
-#    audio = whisper.pad_or_trim(audio)
-    # make log-Mel spectrogram and move to the same device as the model
-#    mel = whisper.log_mel_spectrogram(audio).to(model.device)
-    # detect the spoken language
-#    _, probs = model.detect_language(mel)
-
-#    print(f"Detected language: {max(probs, key=probs.get)}")
-    # decode the audio
-#    options = whisper.DecodingOptions()
-#    result = whisper.decode(model, mel, options)
-#    output = result.text
-    # print the recognized text
-#    print(output)
-#    return output
-
 def whisper_decodingnew(): #### translate only into english lanaguage
     ### .wav to .mp3
     sound = pydub.AudioSegment.from_wav("output.wav")  # convert to .mp3
