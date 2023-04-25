@@ -12,7 +12,7 @@ go into the directory and initialize it
 rasa init
 rasa train
 ```
-### In AlienWare
+### In AlienWare (for ROBOcup team)
 activate the venv enviornment
 ```source ./venv/bin/activate```
 
