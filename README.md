@@ -19,35 +19,35 @@ run the rasa
 rasa run --enable-api
 ```
 ### If you need to add words in vocabulary
--> check https://github.com/MehreenNaeem/GPSR_RASA
+checkout following https://github.com/MehreenNaeem/GPSR_RASA
 
 ### install python dependencies
--> Whispher 
-´´´
+Whispher
+```
 pip install -U openai-whisper
-´´´
--> Natural Language Toolkit
-´´´
-sudo apt install python3-nltk
-´´´
--> PyDub
-´´´
+```
+Natural Language Toolkit
+```
+sudo apt install python3-nltk 
+```
+PyDub
+```
 pip install pydub
-´´´
--> Play Sound
-´´´
+```
+Play Sound
+```
 pip install playsound
-´´´
--> Speech Recognition
-´´´
+```
+Speech Recognition
+```
 pip install SpeechRecognition
-´´´
--> Gtts
-´´´
+```
+Gtts
+```
 pip install gTTS
-´´´
--> pyAudio
-´´´
+```
+PyAudio
+```
 sudo apt install python3-pyaudio
-´´´
+```
 
