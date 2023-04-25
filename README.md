@@ -93,11 +93,15 @@ gpsr-plans.lisp (plans are defined in it)
 gpsr-pub.lisp (publish the data about plans)
 
 So the data send in a formate of string array which has following slot division:
+
 [plan_name object_name object_type person_name person_type attribute person_action color number location1 location2 room1 room2]
+
 e.g 1) "provide an apple to the robert sitting in a bedroom"
 ['deliver', 'apple', 'nil', 'robert', 'nil', 'nil', 'sitting', 'nil', 'nil', 'nil', 'nil', 'bedroom', 'nil']
+
 e.g 2) "transport two red object from desk in a bedroom to the dishwasher"
 ['transport', 'object', 'nil', 'nil', 'nil', 'nil', 'nil', 'red', 'two', 'desk', 'dishwasher', 'bedroom', 'nil']
+
 e.g 3) "how many people in the dining room are boys"
 ['count', 'nil', 'nil', 'nil', 'boys', 'nil', 'nil', 'nil', 'nil', 'nil', 'nil', 'room', 'nil']
 
