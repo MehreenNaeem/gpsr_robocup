@@ -64,5 +64,6 @@ DEMO> (listener "chatter")
 ```
 ### Launch NLP python script 
 go into the workspace and launch gpsr_robocup package
+```
 roslaunch gpsr_robocup launch_all.xml
-
+```
