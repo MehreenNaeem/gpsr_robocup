@@ -22,7 +22,7 @@ rasa run --enable-api
 checkout following https://github.com/MehreenNaeem/GPSR_RASA
 
 ### Install python dependencies
-Whispher :
+Whispher:
 ```pip install -U openai-whisper```
 Natural Language Toolkit :
 ```sudo apt install python3-nltk ```
