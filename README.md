@@ -7,8 +7,8 @@ make directory:
 ```mkdir my_rasa```
 
 go into the directory and initialize it
-
-```rasa init
+```
+rasa init
 rasa train```
 ### In AlienWare
 activate the venv enviornment
