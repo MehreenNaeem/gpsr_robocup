@@ -18,10 +18,10 @@ run the rasa
 ``` 
 rasa run --enable-api
 ```
-### If you need to add words in vocabulary
+### If you want to add words in vocabulary
 checkout following https://github.com/MehreenNaeem/GPSR_RASA
 
-### install python dependencies
+### Install python dependencies
 Whispher
 ```
 pip install -U openai-whisper
