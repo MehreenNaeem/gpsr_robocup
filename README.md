@@ -24,12 +24,16 @@ checkout following https://github.com/MehreenNaeem/GPSR_RASA
 ### Install python dependencies
 Whispher:
 ```pip install -U openai-whisper```
+
 Natural Language Toolkit :
 ```sudo apt install python3-nltk ```
+
 PyDub :
 ```pip install pydub```
+
 Play Sound :
 ```pip install playsound```
+
 Speech Recognition :
 ```pip install SpeechRecognition```
 Gtts :
