@@ -8,8 +8,8 @@ make directory:
 
 go into the directory and initialize it
 
-```rasa init```
-```rasa train```
+```rasa init
+rasa train```
 ### In AlienWare
 activate the venv enviornment
 ```source ./venv/bin/activate```
