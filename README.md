@@ -47,7 +47,5 @@ Gtts
 pip install gTTS
 ```
 PyAudio
-```
-sudo apt install python3-pyaudio
-```
+```sudo apt install python3-pyaudio```
 
