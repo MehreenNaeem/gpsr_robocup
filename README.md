@@ -9,9 +9,8 @@ mkdir my_rasa
 rasa init
 ```
 ### In AlienWare
-
 activate the venv enviornment
-```source ./venv/bin//activate```
+```source ./venv/bin/activate```
 
 run the rasa
 ```rasa run --enable-api```
