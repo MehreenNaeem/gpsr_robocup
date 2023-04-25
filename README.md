@@ -44,3 +44,7 @@ Gtts :
 PyAudio :
 ```sudo apt install python3-pyaudio```
 
+## How to Run GPSR_NLP
+### CRAM
+launch the cram package
+```roslaunch cram_bullet_world_tutorial world.launch```
