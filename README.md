@@ -3,12 +3,9 @@
 ## Dependencies
 ### how to setup new RASA enviorment 
 install rasa via https://rasa.com/docs/rasa/installation/installing-rasa-open-source/
-
 -> make directory
-```
-mkdir my_rasa
-rasa init 
-```
+```mkdir my_rasa
+rasa init ```
 ### In AlienWare
 activate the venv enviornment
 ``` 
@@ -36,8 +33,10 @@ Play Sound :
 
 Speech Recognition :
 ```pip install SpeechRecognition```
+
 Gtts :
 ```pip install gTTS```
+
 PyAudio :
 ```sudo apt install python3-pyaudio```
 
