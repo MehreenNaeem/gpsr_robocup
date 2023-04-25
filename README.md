@@ -6,14 +6,16 @@ install rasa via https://rasa.com/docs/rasa/installation/installing-rasa-open-so
 -> make directory
 ```
 mkdir my_rasa
-rasa init ```
+rasa init```
+
 ### In AlienWare
 
 activate the venv enviornment
 ``` source ./venv/bin//activate```
 
 run the rasa
-``` rasa run --enable-api```
+```rasa run --enable-api```
+
 ### If you want to add words in vocabulary
 checkout following https://github.com/MehreenNaeem/GPSR_RASA
 
