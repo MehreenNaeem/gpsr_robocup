@@ -80,6 +80,3 @@ In terminal, go into the directory gpsr_robocup, run the following node
 gpsr_robocup$ rosrun gpsr_robocup testingf.py
 ```
 
-TODO
--- run rasa
--- 
