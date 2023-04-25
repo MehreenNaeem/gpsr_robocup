@@ -45,8 +45,14 @@ PyAudio :
 ```sudo apt install python3-pyaudio```
 
 ## How to Run GPSR_NLP 
-### RASA
+### RASA 
 run the rasa
+TODO
+(for RObocup on Alienware)
+I have install rasa in venv.
+@home /rasa_rb
+
+
 ### CRAM 
 launch the cram package:
 ```
@@ -73,3 +79,7 @@ In terminal, go into the directory gpsr_robocup, run the following node
 ```
 gpsr_robocup$ rosrun gpsr_robocup testingf.py
 ```
+
+TODO
+-- run rasa
+-- 
