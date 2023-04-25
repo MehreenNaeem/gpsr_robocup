@@ -85,8 +85,11 @@ TODO(make it work for multi commands)
 
 ## Some Stuff related to Cram
 GPSR-NLP is using cram_pr2_pick_place_demo package.
+
 gpsr-ln.lisp (listen the data from python script)
+
 gpsr-plans.lisp (plans are defined in it)
+
 gpsr-pub.lisp (publish the data about plans)
 
 So the data send in a formate of string array which has following slot division:
