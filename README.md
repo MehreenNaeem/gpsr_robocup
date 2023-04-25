@@ -39,13 +39,10 @@ Play Sound
 pip install playsound
 ```
 Speech Recognition
-```
-pip install SpeechRecognition
+```pip install SpeechRecognition
 ```
 Gtts
-```
-pip install gTTS
-```
+```pip install gTTS```
 PyAudio
 ```sudo apt install python3-pyaudio```
 
