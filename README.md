@@ -46,7 +46,18 @@ PyAudio :
 
 ## How to Run GPSR_NLP
 ### CRAM
-launch the cram package
+launch the cram package:
 ```
 roslaunch cram_bullet_world_tutorial world.launch
 ```
+load the package in the REPL (start the REPL with $ roslisp_repl):
+```
+CL-USER> (asdf:load-system :cram-pr2-pick-place-demo)
+DEMO> (in-package :demo)
+DEMO> (roslisp-utilities:startup-ros)
+```
+listen the topics from the python scripts
+```
+DEMO> (listener "chatter")
+```
+ 
