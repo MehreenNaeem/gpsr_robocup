@@ -4,10 +4,11 @@
 ### Setup new RASA enviorment 
 install rasa via https://rasa.com/docs/rasa/installation/installing-rasa-open-source/
 make directory: 
-```
-mkdir my_rasa
-rasa init
-```
+```mkdir my_rasa```
+
+go into the directory and initialize it
+```rasa init```
+```rasa train```
 ### In AlienWare
 activate the venv enviornment
 ```source ./venv/bin/activate```
