@@ -1,5 +1,5 @@
 # GPSR_NLP
-TODO(add cram files) sim_mode
+
 ## Dependencies
 ### Setup new RASA enviorment 
 install rasa via https://rasa.com/docs/rasa/installation/installing-rasa-open-source/
