@@ -79,7 +79,7 @@ roslaunch gpsr_robocup launch_all.xml
 ```
 For testing purpose (if you want to give command in text form).
 Open the file gpsr_robocup/scripts/testingf.py. Enter the text and save it.
-In terminal, go into the directory gpsr_robocup, run the following node
+Run the roscore and then in terminal, go into the directory gpsr_robocup, run the following node
 ```
 gpsr_robocup$ rosrun gpsr_robocup testingf.py
 ```
