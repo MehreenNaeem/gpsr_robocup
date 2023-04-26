@@ -13,7 +13,7 @@ rasa init
 rasa train
 ```
 ### In AlienWare (for ROBOcup team)
-activate the venv enviornment
+I have install rasa in venv. i.e @home /rasa_rb. Activate the venv enviornment
 ```source ./venv/bin/activate```
 
 run the rasa
@@ -28,6 +28,12 @@ Whispher:
 
 Natural Language Toolkit :
 ```sudo apt install python3-nltk ```
+Downlaod the toolkit https://www.youtube.com/watch?v=81_WapLxt2w. open the python in terminal and do following
+```
+home$ python
+>>>import nltk
+>>>nltk.download()
+```
 
 PyDub :
 ```pip install pydub```
