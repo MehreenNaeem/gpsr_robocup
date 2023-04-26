@@ -57,9 +57,9 @@ TODO Nltk https://www.youtube.com/watch?v=81_WapLxt2w
 run the rasa
 
 ### CRAM 
-launch the cram package:
+Currently we are using cram_pr2_pick_place_demo package launch the cram package:
 ```
-roslaunch cram_bullet_world_tutorial world.launch
+roslaunch cram_pr2_pick_place_demo sandbox.launch
 ```
 load the package in the REPL (start the REPL with $ roslisp_repl):
 ```
