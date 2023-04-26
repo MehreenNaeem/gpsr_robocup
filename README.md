@@ -50,7 +50,6 @@ Gtts :
 PyAudio :
 ```sudo apt install python3-pyaudio```
 
-TODO Nltk https://www.youtube.com/watch?v=81_WapLxt2w
 
 ## How to Run GPSR_NLP 
 ### RASA 
