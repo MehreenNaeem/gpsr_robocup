@@ -55,11 +55,6 @@ TODO Nltk https://www.youtube.com/watch?v=81_WapLxt2w
 ## How to Run GPSR_NLP 
 ### RASA 
 run the rasa
-TODO
-(for RObocup on Alienware)
-I have install rasa in venv.
-@home /rasa_rb
-
 
 ### CRAM 
 launch the cram package:
