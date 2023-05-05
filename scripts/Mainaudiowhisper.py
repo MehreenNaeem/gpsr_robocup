@@ -1,98 +1,39 @@
 #!/usr/bin/env python
 
 from gpsr_robocup.Audioreader import MyAudioreader
-from gpsr_robocup.WhisperNltkRasa import Whisper_NLTK_RASA
-from gpsr_robocup.DataEntering import Data_entering
+from gpsr_robocup.Audioreader.SpeechLanguageInterpretator import functionAudio
+from gpsr_robocup import _nlpCommands
+import rospy
+from std_msgs.msg import String
 
-
+########################## MAIN CODE Audio ##########################################
+rospy.init_node("NLP_node")
 MyAudioreader.speak("Hi I am HSR")
+gpsrstage1  = 3 ### INPUT set number of challanges
 
-def interruption_action(text):
-    if ("Stop" or "Stop.") in text:
-        MyAudioreader.speak("Process is stopped")
-        value_ia = True
-    else:
-        value_ia = False
-    return value_ia
+functionAudio(15)
 
-def confirmation(outputtext):
-    if interruption_action(outputtext):
-        check = 2
-    else:
-        check = 0
-    MyAudioreader.speak("you said")
-    MyAudioreader.speak(outputtext)
-    k = 1
-    while k < 3:
-        if check != 2 :
-            MyAudioreader.speak("right? Say yes or no")
-            MyAudioreader.audiocommand(5)
-            yes_no = Whisper_NLTK_RASA.whisper_decodingnew()
-            MyAudioreader.speak("okay")
-            print(yes_no)
-            if ("Yes." or "Yes" or "Yes yes") in yes_no:
-                print("Yes")
-                MyAudioreader.speak("I am doing the task")
-                check = True
-                break
-            elif ("No." or "No" or "No no") in yes_no:
-                check = False
-                MyAudioreader.speak("Unable to understand")
-                break
-            elif (interruption_action):
-                check = 2
-                MyAudioreader.speak("Process is stopped")
-                break
-            else:
-                check = False
-                MyAudioreader.speak("Speak again ")
-            k += 1
+CmndNum = 0
+def callback(data):
+    checktask = data.data
+    global CmndNum
+    print('******')
+    if checktask == 'done':
+        print('TASK DONE')
+        CmndNum = CmndNum + 1
+        print(CmndNum)
+
+        if CmndNum <= gpsrstage1-1:
+            print('------Next Task-----')
+            functionAudio(15)
         else:
-            break
-    return check
+            print('-----All Commands are Done-----')
+            MyAudioreader.speak("All" + str(gpsrstage1-1) + " task are done")
 
-def function1(timedaurt):
-    MyAudioreader.speak("Give me the task")
-    MyAudioreader.audiocommand(timedaurt)
-    outputtext = Whisper_NLTK_RASA.whisper_decodingnew()
-    print(outputtext)
-    i = 1
-    while i < 5:
-        if "..." in outputtext:
-            MyAudioreader.speak("No Voice is detected. Give me the task again")
-            MyAudioreader.audiocommand(timedaurt)
-            outputtext = Whisper_NLTK_RASA.whisper_decodingnew()
-            print(outputtext)
-            checkval = confirmation(outputtext)
-            if checkval == False:
-                MyAudioreader.speak(" Speak clearly. Give me the task again")
-                MyAudioreader.audiocommand(timedaurt)
-                outputtext = Whisper_NLTK_RASA.whisper_decodingnew()
-                print(outputtext)
-                checkval = confirmation(outputtext)
-            if checkval == True:
-                print("task in progress")
-                Data_entering.CmdIntre(outputtext)
-                break
-            if checkval == 2:
-                break
-        else:
-            checkval = confirmation(outputtext)
-            if checkval == False:
-                MyAudioreader.speak(" Speak clearly. Give me the task again")
-                MyAudioreader.audiocommand(timedaurt)
-                outputtext = Whisper_NLTK_RASA.whisper_decodingnew()
-                print(outputtext)
-                checkval = confirmation(outputtext)
-            if checkval == True:
-                print("task in progress")
-                Data_entering.CmdIntre(outputtext)
-                break
-            if checkval == 2:
-                break
-            i += 1
-        if i == 4:
-            MyAudioreader.speak("Unable to do the task")
+    else:
+        print(checktask)
 
-function1(15) ### timedaurt = 15 sec
+
+cram_listner = rospy.Subscriber("CRAMpub", String, callback)
+rospy.spin()
 
