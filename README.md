@@ -108,7 +108,7 @@ e.g 3) "how many people in the dining room are boys"
 ```['count', 'nil', 'nil', 'nil', 'boys', 'nil', 'nil', 'nil', 'nil', 'nil', 'nil', 'room', 'nil']```
 
 
-So gpsr-ln.lisp receives the data in the given string formate and save them in respective variables. then it match with the plans list and take variable according to the selected plan.
+The gpsr-ln.lisp receives the data in the given string formate and save them in respective variables. then it match with the plans list and take variable according to the selected plan.
 if you want to add plans:
 - define them in gpsr-plans.lisp using defun
 - add plan title in list-of-plans and call plan function in subcriber-callback-function in gpsr-ln.lisp. e.g.
