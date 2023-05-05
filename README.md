@@ -68,7 +68,9 @@ DEMO> (roslisp-utilities:startup-ros)
 ```
 Listen the topics from the python scripts
 ```
-DEMO> (listener "chatter")
+DEMO> (nlplistener "NLPchatter")
+DEMO> (planlistener "Planchatter")
+
 ```
 ### Launch NLP python script
 
