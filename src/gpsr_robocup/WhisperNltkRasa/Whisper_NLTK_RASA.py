@@ -129,7 +129,7 @@ def planinterpreter(inputtext):
         response = json.loads(r.text)
         return response
 
-    print("Number of sentences : ", (len(sentences)))
+    #print("Number of sentences : ", (len(sentences)))
     extra_worlds = ['You can', 'Can you', 'Could you', 'Please', 'please', 'And', 'Tell me']
 
     all_plans = []
@@ -142,7 +142,7 @@ def planinterpreter(inputtext):
         a2 = ' '.join(s)
         for bw in extra_worlds:
             a2 = a2.replace(bw, '').capitalize()
-        print(a2)
+        #print(a2)
         ##### check if correct plan is selected or not
         Centities, Centity_types, Ctokens = NLTK_tokenizer(a2)
         plan_estimator = []
@@ -154,7 +154,7 @@ def planinterpreter(inputtext):
 
         response_1 = rasa_response(a2)
         plan = (response_1['intent'])['name']
-        print('actual plan:', plan)
+        #print('actual plan:', plan)
         parameters_type = []
         parameters_name = []
         for x in (response_1['entities']):
@@ -180,11 +180,12 @@ def planinterpreter(inputtext):
         if (plan != plan_estimator) and (plan_estimator != 'Tell') and (plan_estimator != []):
             plan = plan_estimator
 
-        print('plan estimated :', plan_estimator)
-        print("plan :", plan)
-        print("type : name")
-        print(res22)
-        print("**************")
+        #print('plan estimated :', plan_estimator)
+        #print("plan :", plan)
+        #print("type : name")
+        #print(res22)
+        #print("**************")
+        print('Processing the Language ...')
         i = i + 1
         output_dict[i] = [plan, paramters_dict]
 
