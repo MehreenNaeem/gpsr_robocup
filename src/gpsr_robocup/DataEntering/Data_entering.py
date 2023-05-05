@@ -63,8 +63,8 @@ def Plansorting(sentence_plan):
 
 
 def planseparator(text):
-    rospy.init_node("NLP_node")
-    pub = rospy.Publisher('chatter', _nlpCommands.nlpCommands, queue_size=10)
+    #rospy.init_node("NLP_node") #######################################################
+    pub = rospy.Publisher('Planchatter', _nlpCommands.nlpCommands, queue_size=10)
     rate = rospy.Rate(5)
     #myplanss = planinterpreter(text) ## text to data labeling
     #text1 = (myplanss[1])
@@ -74,26 +74,53 @@ def planseparator(text):
     plan_name = (Plansorting(text))[0]
     return (plan_name)
 
-#def planseparator(text):
-#    print(Plansorting(text))
-#    return (Plansorting(text))
-
-
 def SpeechToCram(text):
     myplanss = Whisper_NLTK_RASA.planinterpreter(text)  ## text to data labeling
 
     for sent_num in range(len(myplanss)):
         if sent_num > 0:
             text1 = (myplanss[sent_num])
-            print(text1)
+            #print(text1)
             for i in range(1):  ## how many times it published
                 planseparator(text1)
 
     #return myplanss
 
 
+
 def CmdIntre(text):
-    commandstobe = ["cram", text]
+    commandstobe = ['cram', text]
     for q in range(len(commandstobe)):
         print(commandstobe[q])
+
         SpeechToCram(commandstobe[q])
+        #pubtext =
+
+
+    #rospy.init_node("NLP_node")
+    #pub = rospy.Publisher('chatter', nlpCommands, queue_size=10)
+    #rate = rospy.Rate(5)
+    #myplanss = planinterpreter(text) ## text to data labeling
+    #text1 = (myplanss[1])
+    #print(Plansorting(text))
+    #pub.publish(Plansorting(text))
+    #rate.sleep()
+
+    #pub.publish("testing")
+    #print(myplanss)
+    #text1 = (myplanss[1])
+    #for sent_num in range(len(myplanss)):
+    #    if sent_num > 0:
+            #text1 = (myplanss[sent_num])
+    #        print(text1)
+    #        print(Plansorting(text1))
+    #        for i in range(1):
+                #pub.publish(Plansorting(text1))
+                #rate.sleep()
+            #rospy.signal_shutdown("plan runned")
+    #rospy.spin()
+
+
+#SpeechToCram("fetch the spoon ")
+#SpeechToCram("place the spoon ")
+
