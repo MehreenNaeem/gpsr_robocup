@@ -10,7 +10,7 @@ from std_msgs.msg import String
 rospy.init_node("NLP_node")
 MyAudioreader.speak("Hi I am HSR")
 gpsrstage1  = 3 ### INPUT set number of challanges
-
+MyAudioreader.speak("Going to perfrom " +  str(gpsrstage1) + " commands")
 functionAudio(15)
 
 CmndNum = 0
@@ -28,7 +28,7 @@ def callback(data):
             functionAudio(15)
         else:
             print('-----All Commands are Done-----')
-            MyAudioreader.speak("All" + str(gpsrstage1-1) + " task are done")
+            MyAudioreader.speak("All" + str(gpsrstage1) + " task are done")
 
     else:
         print(checktask)
