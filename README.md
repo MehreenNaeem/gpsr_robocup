@@ -82,7 +82,7 @@ For testing purpose (if you want to give command in text form). (TODO: give comm
 Open the file gpsr_robocup/scripts/testingf.py. Enter the text and save it.
 Run the roscore and then in terminal, go into the directory gpsr_robocup, run the following node
 ```
-gpsr_robocup$ rosrun gpsr_robocup testingf.py
+rosrun gpsr_robocup Subcriber_cram_msg.py 
 gpsr_robocup$ rosrun gpsr_robocup testingf.py
 ```
 (currently it only takes one command. so for new command kill the launch file and launch it again)
