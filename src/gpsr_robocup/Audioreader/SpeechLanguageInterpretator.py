@@ -62,7 +62,7 @@ def functionAudio(timedaurt):
     i = 1
     texttext = outputtext
     while i < 5:
-        if outputtext == "...":
+        if outputtext == "..." or " ":
             MyAudioreader.speak("No Voice is detected. Give me the task again")
             MyAudioreader.audiocommand(timedaurt)
             outputtext = Whisper_NLTK_RASA.whisper_decodingnew()
