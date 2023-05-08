@@ -78,10 +78,11 @@ Go into the workspace and launch gpsr_robocup package (if you want to give comma
 ```
 roslaunch gpsr_robocup launch_all.xml
 ```
-For testing purpose (if you want to give command in text form).
+For testing purpose (if you want to give command in text form). (TODO: give command in terminal)
 Open the file gpsr_robocup/scripts/testingf.py. Enter the text and save it.
 Run the roscore and then in terminal, go into the directory gpsr_robocup, run the following node
 ```
+gpsr_robocup$ rosrun gpsr_robocup testingf.py
 gpsr_robocup$ rosrun gpsr_robocup testingf.py
 ```
 (currently it only takes one command. so for new command kill the launch file and launch it again)
