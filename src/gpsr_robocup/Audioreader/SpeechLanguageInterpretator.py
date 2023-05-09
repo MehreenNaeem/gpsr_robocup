@@ -62,7 +62,7 @@ def functionAudio(timedaurt):
     i = 1
     texttext = outputtext
     while i < 5:
-        if outputtext == "..." or " ":
+        if outputtext == "...":
             MyAudioreader.speak("No Voice is detected. Give me the task again")
             MyAudioreader.audiocommand(timedaurt)
             outputtext = Whisper_NLTK_RASA.whisper_decodingnew()
@@ -97,3 +97,8 @@ def functionText(outputtext):
     pub.publish(planlist)
     print("*Task in progress*")
     Data_entering.CmdIntre(outputtext)
+
+
+
+#text_gpsr = rospy.Subscriber("text_gpsr_command", String, callback)
+#rospy.spin()
