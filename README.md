@@ -85,7 +85,7 @@ Go into the directory gpsr_robocup and in separate terminals, run the following 
 gpsr_robocup$ rosrun gpsr_robocup Subcriber_cram_msg.py 
 gpsr_robocup$ rosrun gpsr_robocup testingf.py
 ```
-After running testingf node, it asks for input in the text form on terminal. First enter number of commands you want to excute in the whole demo e.g for gpsr-stage1 it is 3. Then it ask to type the task. e.g
+After running testingf node, it asks you for input in the terminal. First enter number of commands you want to excute in the whole demo e.g for gpsr-stage1 it is 3. Then it ask to type the task. e.g
 ```
 Enter the total number of task: 3
 Enter the Task 1 :Can you please give me the milk
