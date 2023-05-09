@@ -8,16 +8,25 @@ from std_msgs.msg import String
 ########################## MAIN CODE TEXT ##########################################
 rospy.init_node("NLP_node")
 MyAudioreader.speak("Hi I am HSR")
-gpsrstage1  = 3 ### INPUT set number of challanges
+MyAudioreader.speak("Text mode is activated... ")
+gpsrstage1  = int(input("Enter the total number of task: ")) ### INPUT set number of challanges
 
-list_cmnds = ['fetch a bowl','place the bowl', 'drop the spoon'] ### for 3 commands
+#list_cmnds = ['fetch a bowl','place the bowl', 'drop the spoon'] ### for 3 commands
 
+class text_input:
+  def __init__(self, text_cmd, num_tx):
+    self.text_cmd = text_cmd
+    self.num_tx = num_tx
+
+def taking_input(number):
+    task_1 = input("Enter the Task " + str(number) + " :")
+    MyAudioreader.speak('Doing the following task ...')
+    MyAudioreader.speak(task_1)
+    functionText(task_1)
 
 
 CmndNum = 0
-MyAudioreader.speak('Doing the following task ...')
-MyAudioreader.speak(list_cmnds[CmndNum])
-functionText(list_cmnds[CmndNum])
+taking_input(CmndNum+1)
 
 def callback(data):
     checktask = data.data
@@ -30,12 +39,10 @@ def callback(data):
 
         if CmndNum <= gpsrstage1-1:
             print('------Next Task-----')
-            MyAudioreader.speak('Doing the following task ...')
-            MyAudioreader.speak(list_cmnds[CmndNum])
-            functionText(list_cmnds[CmndNum])
+            taking_input(CmndNum+1)
         else:
             print('-----All Commands are Done-----')
-            MyAudioreader.speak("All" + str(gpsrstage1) + " task are done")
+            MyAudioreader.speak("All " + str(gpsrstage1) + " task are done")
 
     else:
         print(checktask)
