@@ -51,7 +51,7 @@ PyAudio :
 ```sudo apt install python3-pyaudio```
 
 
-## How to Run GPSR_NLP 
+## How to Run GPSR_NLP and perform gpsr task
 ### RASA 
 run the rasa
 
@@ -70,8 +70,9 @@ Listen the topics from the python scripts
 ```
 DEMO> (nlplistener "NLPchatter")
 DEMO> (planlistener "Planchatter")
-
 ```
+
+
 ### Launch NLP python script
 #### (Audio Mode)
 Go into the workspace and launch gpsr_robocup package (if you want to give command by audio)
