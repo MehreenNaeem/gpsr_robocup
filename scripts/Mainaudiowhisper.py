@@ -18,7 +18,7 @@ def callback(data):
     checktask = data.data
     global CmndNum
     print('******')
-    if checktask == 'done':
+    if checktask == 'done' or 'failed':
         print('TASK DONE')
         CmndNum = CmndNum + 1
         print(CmndNum)

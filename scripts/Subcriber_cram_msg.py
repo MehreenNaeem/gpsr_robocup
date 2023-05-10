@@ -19,6 +19,11 @@ def callback(data):
            print('----')
            print(cram_cmd)
            print('----')
+       elif cram_cmd == 'failed':
+           print('----')
+           print(cram_cmd)
+           print('----')
+           cram_speaker.clear()
        if cram_cmd in PlanList:
            cram_speaker.append(cram_cmd)
            print(cram_speaker)

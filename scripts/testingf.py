@@ -32,7 +32,9 @@ def callback(data):
     checktask = data.data
     global CmndNum
     print('******')
-    if checktask == 'done':
+    if checktask =='failed':
+        MyAudioreader.speak('Unable to complete the task... going back to the starting point')
+    if checktask == 'done' or 'failed':
         print('TASK DONE')
         CmndNum = CmndNum + 1
         print(CmndNum)
