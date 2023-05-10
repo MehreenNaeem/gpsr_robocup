@@ -13,7 +13,7 @@ def speak(text):
     playsound.playsound(filename)
 
 ##### Record the Audio
-def audiocommand(timeinsec):
+def audiocommand(timeinsec, texttospeak):
     CHUNK = 1024
     Formate = pyaudio.paInt16
     Channels = 1
@@ -25,8 +25,9 @@ def audiocommand(timeinsec):
                     rate=Rate,
                     input = True,
                     frames_per_buffer=CHUNK)
+
+    speak(texttospeak)
     print("start recording...")
-    speak("Speak Now")
     frames = []
     seconds = timeinsec ### set time for recording
     for i in range(0, int(Rate/CHUNK * seconds)):

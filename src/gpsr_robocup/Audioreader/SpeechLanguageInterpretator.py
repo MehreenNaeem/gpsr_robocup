@@ -28,8 +28,8 @@ def confirmation(outputtext):
     k = 1
     while k < 3:
         if check != 2 :
-            MyAudioreader.speak("right? Say yes or no")
-            MyAudioreader.audiocommand(5)
+            #MyAudioreader.speak("right? Say yes or no")
+            MyAudioreader.audiocommand(6, "right? Say yes or no")
             yes_no = Whisper_NLTK_RASA.whisper_decodingnew()
             MyAudioreader.speak("okay")
             print(yes_no)
@@ -55,24 +55,24 @@ def confirmation(outputtext):
     return check
 
 def functionAudio(timedaurt):
-    MyAudioreader.speak("Give me the task")
-    MyAudioreader.audiocommand(timedaurt)
+    #MyAudioreader.speak("Give me the task")
+    MyAudioreader.audiocommand(timedaurt,"Give me the task")
     outputtext = Whisper_NLTK_RASA.whisper_decodingnew()
     print(outputtext)
     i = 1
     texttext = outputtext
     while i < 5:
         if outputtext == "...":
-            MyAudioreader.speak("No Voice is detected. Give me the task again")
-            MyAudioreader.audiocommand(timedaurt)
+            #MyAudioreader.speak("No Voice is detected. Give me the task again")
+            MyAudioreader.audiocommand(timedaurt, "No Voice is detected. Give me the task again")
             outputtext = Whisper_NLTK_RASA.whisper_decodingnew()
             print(outputtext)
 
         else:
             checkval = confirmation(outputtext)
             if checkval == False:
-                MyAudioreader.speak(" Speak clearly. Give me the task again")
-                MyAudioreader.audiocommand(timedaurt)
+                #MyAudioreader.speak(" Speak clearly. Give me the task again")
+                MyAudioreader.audiocommand(timedaurt," Speak clearly. Give me the task again")
                 outputtext = Whisper_NLTK_RASA.whisper_decodingnew()
                 print(outputtext)
                 checkval = confirmation(outputtext)
