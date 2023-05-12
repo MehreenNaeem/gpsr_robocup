@@ -24,7 +24,6 @@ def taking_input(number):
     MyAudioreader.speak(task_1)
     functionText(task_1)
 
-
 CmndNum = 0
 taking_input(CmndNum+1)
 
@@ -32,10 +31,8 @@ def callback(data):
     checktask = data.data
     global CmndNum
     print('******')
-    if checktask =='failed':
-        MyAudioreader.speak('Unable to complete the task... going back to the starting point')
-    if checktask == 'done' or 'failed':
-        print('TASK DONE')
+    if checktask == 'DONE' or checktask == 'FAIL':
+        print('TASK : ' + checktask)
         CmndNum = CmndNum + 1
         print(CmndNum)
 

@@ -18,11 +18,10 @@ def callback(data):
     checktask = data.data
     global CmndNum
     print('******')
-    if checktask == 'done' or 'failed':
-        print('TASK DONE')
+    if checktask == 'DONE' or checktask == 'FAIL':
+        print('TASK : ' + checktask)
         CmndNum = CmndNum + 1
         print(CmndNum)
-
         if CmndNum <= gpsrstage1-1:
             print('------Next Task-----')
             functionAudio(15)
