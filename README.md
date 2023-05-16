@@ -126,3 +126,14 @@ if you want to add plans:
 			)
 ```
 here plan title is DELIVER and plan-function is delivering-object (Note that plan title is the name of intent defined in RASA files data/nlu.yml and domain.yml)
+## HSR microphone
+The package audio_common can stream audio and play it on another device
+To start the streaming launch
+```
+roslaunch audio_capture capture.launch
+```
+To play on another device you can use
+```
+roslaunch audio_play play.launch
+```
+The audio is streamed on the topic /audio/audio.
