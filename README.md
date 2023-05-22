@@ -14,7 +14,8 @@ rasa train
 ```
 ### In AlienWare (for ROBOcup team)
 I have install rasa in venv. i.e @home /rasa_rb. Activate the venv enviornment
-```source ./venv/bin/activate
+```
+source ./venv/bin/activate
 cd rasa_rb
 ```
 
