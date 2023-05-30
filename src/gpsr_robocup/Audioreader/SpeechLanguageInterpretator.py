@@ -7,6 +7,9 @@ from gpsr_robocup.PlansCheck.plancheck import Planstoberun
 from gpsr_robocup import _nlpCommands
 import rospy
 from std_msgs.msg import String
+import wave
+from audio_common_msgs.msg import AudioData
+import time
 
 
 
@@ -29,16 +32,16 @@ def confirmation(outputtext):
     while k < 3:
         if check != 2 :
             #MyAudioreader.speak("right? Say yes or no")
-            MyAudioreader.audiocommand(6, "right? Say yes or no")
+            hsr_microphone(6, "right? Say yes or no")
             yes_no = Whisper_NLTK_RASA.whisper_decodingnew()
             MyAudioreader.speak("okay")
             print(yes_no)
-            if ("Yes." or "Yes" or "Yes yes") in yes_no:
+            if ("Yes." or "Yes" or "Yes?" or "Yes yes") in yes_no:
                 print("Yes")
                 MyAudioreader.speak("I am doing the task")
                 check = True
                 break
-            elif ("No." or "No" or "No no") in yes_no:
+            elif ("No." or "No" or "No?" or "No no") in yes_no:
                 check = False
                 MyAudioreader.speak("Unable to understand")
                 break
@@ -54,9 +57,19 @@ def confirmation(outputtext):
             break
     return check
 
+def functionText(outputtext):
+    planlist = Planstoberun(outputtext)
+    pub = rospy.Publisher('PlanList', _nlpCommands.nlpCommands, queue_size=10)
+    (rospy.Rate(5)).sleep()
+    pub.publish(planlist)
+    print("*Task in progress*")
+    Data_entering.CmdIntre(outputtext)
+
+
+##### Use HSR microphone for speech command
 def functionAudio(timedaurt):
     #MyAudioreader.speak("Give me the task")
-    MyAudioreader.audiocommand(timedaurt,"Give me the task")
+    hsr_microphone(timedaurt,"Give me the task")
     outputtext = Whisper_NLTK_RASA.whisper_decodingnew()
     print(outputtext)
     i = 1
@@ -64,7 +77,7 @@ def functionAudio(timedaurt):
     while i < 5:
         if outputtext == "...":
             #MyAudioreader.speak("No Voice is detected. Give me the task again")
-            MyAudioreader.audiocommand(timedaurt, "No Voice is detected. Give me the task again")
+            hsr_microphone(timedaurt, "No Voice is detected. Give me the task again")
             outputtext = Whisper_NLTK_RASA.whisper_decodingnew()
             print(outputtext)
 
@@ -72,7 +85,7 @@ def functionAudio(timedaurt):
             checkval = confirmation(outputtext)
             if checkval == False:
                 #MyAudioreader.speak(" Speak clearly. Give me the task again")
-                MyAudioreader.audiocommand(timedaurt," Speak clearly. Give me the task again")
+                hsr_microphone(timedaurt," Speak clearly. Give me the task again")
                 outputtext = Whisper_NLTK_RASA.whisper_decodingnew()
                 print(outputtext)
                 checkval = confirmation(outputtext)
@@ -90,15 +103,42 @@ def functionAudio(timedaurt):
         if i == 4:
             MyAudioreader.speak("Unable to do the task")
 
-def functionText(outputtext):
-    planlist = Planstoberun(outputtext)
-    pub = rospy.Publisher('PlanList', _nlpCommands.nlpCommands, queue_size=10)
-    (rospy.Rate(5)).sleep()
-    pub.publish(planlist)
-    print("*Task in progress*")
-    Data_entering.CmdIntre(outputtext)
 
 
 
-#text_gpsr = rospy.Subscriber("text_gpsr_command", String, callback)
-#rospy.spin()
+
+#### Hsr Listner
+def hsr_microphone(p_time,texttospeak):
+
+    global frames
+    global record
+    MyAudioreader.speak(texttospeak)
+    record = True
+    print('start recording...')
+    time.sleep(p_time)
+    record = False
+    print('recording stop...')
+    print(len(frames))
+    wf = wave.open("output.wav", 'wb')
+    wf.setnchannels(1)
+    wf.setsampwidth(2)
+    wf.setframerate(16000)
+    wf.writeframes(b''.join(frames))
+    wf.close()
+    frames = []
+
+
+def callback(data):
+    global record
+    if record:
+        frames.append(data.data)
+
+
+record = False
+frames = []
+
+
+#rospy.init_node('mic')
+rospy.Subscriber('/audio/audio', AudioData, callback, queue_size=10)
+
+
