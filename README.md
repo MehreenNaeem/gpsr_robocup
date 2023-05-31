@@ -140,3 +140,7 @@ To play on another device you can use
 roslaunch audio_play play.launch
 ```
 The audio is streamed on the topic /audio/audio.
+
+
+TODO
+- add reference nlp... rasa (source dict... roscore)
