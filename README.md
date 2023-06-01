@@ -58,21 +58,28 @@ PyAudio :
 ### RASA 
 run the rasa
 
+
 ### CRAM 
-Currently we are using cram_pr2_pick_place_demo package launch the cram package:
+On Alienware
 ```
-roslaunch cram_pr2_pick_place_demo sandbox.launch
+ roslaunch suturo_demos suturo_bringup.launch upload_hsrb:=true use_rviz:=true
+ roslaunch suturo_manipulation start_manipulation_easy.launch
+```
+Run the Robokudo in virtual enviornment:
+```
+source rk_venv/bin/activate
+source SUTURO_WSS/perception_ws/devel/setup.bash
+rosrun robokudo main.py _ae=demo_robocup _ros_pkg=suturo_rk_robocup
 ```
 load the package in the REPL (start the REPL with $ roslisp_repl):
 ```
-CL-USER> (asdf:load-system :cram-pr2-pick-place-demo)
-DEMO> (in-package :demo)
-DEMO> (roslisp-utilities:startup-ros)
+CL-USER> (swank:operate-on-system-for-emacs "suturo-demos" (quote load-op)) (in-package :su-demos) (swank:operate-on-system-for-emacs "suturo-real-hsr-pm" (quote load-op))
+SU-DEMOS> (roslisp-utilities:startup-ros)
 ```
 Listen the topics from the python scripts
 ```
-DEMO> (nlplistener "NLPchatter")
-DEMO> (planlistener "Planchatter")
+SU-DEMOS> (nlplistener "NLPchatter")
+SU-DEMOSO> (planlistener "Planchatter")
 ```
 
 
