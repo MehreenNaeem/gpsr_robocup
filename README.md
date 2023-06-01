@@ -101,7 +101,7 @@ Enter the total number of task: 3
 Enter the Task 1 :Can you please give me the milk
 ```
 ## Some Stuff related to Cram
-GPSR-NLP is using cram_pr2_pick_place_demo package. Following are the files that are related to it
+GPSR-Robocup is depended on suturo-demo package. Following are the files that are related to it
 
 gpsr-ln.lisp (listen the data from python script)
 
@@ -124,18 +124,55 @@ e.g 3) "how many people in the dining room are boys"
 
 
 The gpsr-ln.lisp receives the data in the given string formate and save them in respective variables. then it match with the plans list and take variable according to the selected plan.
+### add plans in CRAM
 if you want to add plans:
 - define them in gpsr-plans.lisp using defun
 - add plan title in list-of-plans and call plan function in subcriber-callback-function in gpsr-ln.lisp. e.g.
 ``` lisp = 
-		 (when (eq *plan* :DELIVER)
-		 	(print "Performing delivering ...")
-			(delivering-object *objectname* *location1*)
-			(print "Delivering Plan Done ...")
-			(cram-talker "deliver")
+		 (when (eq *plan* :search)
+		 	(print "Performing searching ...")
+			(setf ?output (searching-object (object-to-be *objectname*))) ;; *objectname* = get-object-cram-name(?nlp-object-name)
+			(print "searching Plan Done ...")
+			(cram-talker ?output)
 			)
 ```
-here plan title is DELIVER and plan-function is delivering-object (Note that plan title is the name of intent defined in RASA files data/nlu.yml and domain.yml)
+here plan title is SEARCH and plan-function is searching-object (Note that plan title is the name of intent defined in RASA files data/nlu.yml and domain.yml). cram-talker send the plan name to the subcriber of GPSR-NLP after plan succeeded. plan function output the "plan name" when it succeeded and "fail" when fails. e.g
+
+``` lisp = 
+(defun searching-object (?object)
+ (setf *perceived-object* nil)
+(call-text-to-speech-action "Trying to perceive object")
+ (let* ((possible-look-directions `(,*forward-upward*
+                                     ,*left-downward*
+                                     ,*right-upward*
+                                     ,*forward-downward*))
+         (?looking-direction (first possible-look-directions)))
+    (setf possible-look-directions (cdr possible-look-directions))
+	(cpl:with-failure-handling
+			  (((or common-fail:perception-object-not-found
+			  					desig:designator-error) (e)
+					 (when possible-look-directions
+					 (roslisp:ros-warn  (perception-failure) "Searching messed up: ~a~%Retring by turning head..." e)
+				     (setf ?looking-direction (first possible-look-directions))
+				     (setf possible-look-directions (cdr possible-look-directions))
+				     (exe:perform (desig:an action 
+				                           (type looking)
+				                           (target (desig:a location
+				                                            (pose ?looking-direction)))))
+				     (cpl:retry))
+				     
+					 (roslisp:ros-warn (pp-plans pick-up) "No more retries left..... going back ")
+					 (return-from searching-object "fail") ;;;; return fail when there is no choice left
+				                
+			 ))
+
+                (setf *perceived-object* (exe:perform (desig:an action
+						       (type detecting)
+						       (object (desig:an object
+						       (type ?object))))))
+						       (call-text-to-speech-action "Successfully perceived object")
+						       (return-from searching-object "search")))) ;;;; return plan name when it finish
+```				    
 ## HSR microphone
 The package audio_common can stream audio and play it on another device
 To start the streaming launch
