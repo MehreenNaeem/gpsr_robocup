@@ -80,6 +80,7 @@ Listen the topics from the python scripts
 ```
 SU-DEMOS> (nlplistener "NLPchatter")
 SU-DEMOSO> (planlistener "Planchatter")
+SU-DEMOS> (hsrtospeak "hsrspeaker")
 ```
 
 
