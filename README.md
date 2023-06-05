@@ -176,9 +176,11 @@ here plan title is SEARCH and plan-function is searching-object (Note that plan 
 ```				    
 ## HSR microphone
 The package audio_common can stream audio and play it on another device
-To start the streaming launch
+To start the streaming launch on HSR desktop. first source the workspace in hsr terminal. Open the terminal(ctrl+alt+T)
+
 ```
-roslaunch audio_capture capture.launch
+source /home/hsr-user/custom_controller_ws/devel/setup.bash
+roslaunch audio_capture capture_wave.launch
 ```
 To play on another device you can use
 ```
