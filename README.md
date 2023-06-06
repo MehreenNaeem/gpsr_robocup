@@ -85,6 +85,7 @@ SU-DEMOS> (hsrtospeak "hsrspeaker")
 
 
 ### Launch NLP python script
+In Aleinware, phd_workspaces/nlp_ws/src/gpsr_robocup package is used to launch the nlp scripts. source the workspace (~/phd_workspaces/nlp_ws [PHD][HSR]$ source devel/setup.bash) and then do following steps 
 #### (Audio Mode)
 Go into the workspace and launch gpsr_robocup package (if you want to give command by audio)
 ```
