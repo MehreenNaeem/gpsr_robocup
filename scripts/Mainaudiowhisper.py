@@ -11,6 +11,7 @@ rospy.init_node("NLP_node")
 MyAudioreader.speak("Hi I am HSR")
 gpsrstage1  = 3 ### INPUT set number of challanges
 MyAudioreader.speak("Going to perfrom " +  str(gpsrstage1) + " commands")
+
 functionAudio(15)
 
 CmndNum = 0
@@ -35,4 +36,3 @@ def callback(data):
 
 cram_listner = rospy.Subscriber("CRAMpub", String, callback)
 rospy.spin()
-

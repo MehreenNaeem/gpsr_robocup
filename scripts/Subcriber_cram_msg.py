@@ -20,7 +20,6 @@ cram_speaker = []
 def callback(data):
        cram_cmd = data.data
        PlanList = checkvar
-       print(cram_cmd) ## 16 May
        if cram_cmd == 'done':
            print('----')
            print(cram_cmd)

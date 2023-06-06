@@ -7,7 +7,7 @@ from std_msgs.msg import String
 
 ########################## MAIN CODE TEXT ##########################################
 rospy.init_node("NLP_node")
-MyAudioreader.speak("Hi I am HSR")
+MyAudioreader.speak("hello i am H S R")
 MyAudioreader.speak("Text mode is activated... ")
 gpsrstage1  = int(input("Enter the total number of task: ")) ### INPUT set number of challanges
 
