@@ -37,11 +37,9 @@ def audiocommand(timeinsec, texttospeak):
                     frames_per_buffer=CHUNK)
 
     speak(texttospeak)
-    
     print("start recording...")
     frames = []
     seconds = timeinsec  ### set time for recording
-
     for i in range(0, int(Rate / CHUNK * seconds)):
         data = stream.read(CHUNK)
         frames.append(data)
