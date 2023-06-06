@@ -7,15 +7,20 @@ import wave
 import rospy
 from audio_common_msgs.msg import AudioData
 import time
-
+from std_msgs.msg import String, Int32MultiArray
 
 ##### speaking
+#def speak(text):
+#    tts = gTTS(text=text, lang="en")
+#    filename = "test_voice1.mp3"
+#    tts.save(filename)
+#    playsound.playsound(filename)
+    
 def speak(text):
-    tts = gTTS(text=text, lang="en")
-    filename = "test_voice1.mp3"
-    tts.save(filename)
-    playsound.playsound(filename)
-
+    pubwords = rospy.Publisher('hsrspeaker',String, queue_size=10)
+    for i in range(1) : pubwords.publish(text)
+    (rospy.Rate(5)).sleep()
+    time.sleep(3)
 
 ##### Record the Audio
 def audiocommand(timeinsec, texttospeak):
@@ -32,6 +37,7 @@ def audiocommand(timeinsec, texttospeak):
                     frames_per_buffer=CHUNK)
 
     speak(texttospeak)
+    
     print("start recording...")
     frames = []
     seconds = timeinsec  ### set time for recording
