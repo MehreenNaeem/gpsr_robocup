@@ -106,9 +106,8 @@ Enter the Task 1 :Can you please give me the milk
 GPSR-Robocup is depended on suturo-demo package. Following are the files that are related to it
 
 gpsr-ln.lisp (listen the data from python script)
-
 gpsr-plans.lisp (plans are defined in it)
-
+gpsr-knowledge.lisp (knowledge about poses and keywords)
 gpsr-pub.lisp (publish the data about plans)
 
 So the data send in a formate of string array which has following slot division:
@@ -175,6 +174,8 @@ here plan title is SEARCH and plan-function is searching-object (Note that plan 
 						       (call-text-to-speech-action "Successfully perceived object")
 						       (return-from searching-object "search")))) ;;;; return plan name when it finish
 ```				    
+(NOTE) All plans take input in the form of keywords which are get resolved by the gpsr-knowledge.lisp. If you want to add any function or variables on which plans depends, please define them in gpsr-knowledge
+
 ## HSR microphone
 The package audio_common can stream audio and play it on another device
 To start the streaming launch on HSR desktop. first source the workspace in hsr terminal. Open the terminal(ctrl+alt+T)
