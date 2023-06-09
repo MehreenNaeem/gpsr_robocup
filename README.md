@@ -85,6 +85,7 @@ SU-DEMOS> (hsrtospeak "hsrspeaker")
 ### Launch NLP python script
 In Aleinware, phd_workspaces/nlp_ws/src/gpsr_robocup package is used to launch the nlp scripts. source the workspace (~/phd_workspaces/nlp_ws [PHD][HSR]$ source devel/setup.bash) and then do following steps 
 #### (Speech Mode)
+Launch the HSR microphone (see below)
 Go into the workspace and launch gpsr_robocup package (if you want to give command by audio)
 ```
 roslaunch gpsr_robocup launch_all.xml
@@ -112,10 +113,10 @@ Enter the Task 1 :Can you please give me the milk
 ## Some Stuff related to Cram
 GPSR-Robocup is depended on suturo-demo package. Following are the files that are related to it
 
-gpsr-ln.lisp (listen the data from python script)
-gpsr-plans.lisp (plans are defined in it)
-gpsr-knowledge.lisp (knowledge about poses and keywords)
-gpsr-pub.lisp (publish the data about plans)
+gpsr-ln.lisp (listen the data from python script).
+gpsr-plans.lisp (plans are defined in it).
+gpsr-knowledge.lisp (knowledge about poses and keywords).
+gpsr-pub.lisp (publish the data about plans).
 
 So the data send in a formate of string array which has following slot division:
 
