@@ -118,6 +118,7 @@ gpsr-plans.lisp (plans are defined in it).
 gpsr-knowledge.lisp (knowledge about poses and keywords).
 gpsr-pub.lisp (publish the data about plans).
 
+
 So the data send in a formate of string array which has following slot division:
 
 [plan_name object_name object_type person_name person_type attribute person_action color number location1 location2 room1 room2]
@@ -132,6 +133,7 @@ e.g 3) "how many people in the dining room are boys"
 ```['count', 'nil', 'nil', 'nil', 'boys', 'nil', 'nil', 'nil', 'nil', 'nil', 'nil', 'room', 'nil']```
 
 
+If the task is consist of more then one sentences e.g "find the bowl in the kitchen and give it on me", nlp divide it into two sentences i.e. "find the bowl in the kitchen" / "give it to me" and give them one by one to CRAM.
 The gpsr-ln.lisp receives the data in the given string formate and save them in respective variables. then it match with the plans list and take variable according to the selected plan.
 ### add plans in CRAM
 if you want to add plans:
