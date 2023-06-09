@@ -65,11 +65,9 @@ On Alienware
  roslaunch suturo_demos suturo_bringup.launch upload_hsrb:=true use_rviz:=true
  roslaunch suturo_manipulation start_manipulation_easy.launch
 ```
-Run the Robokudo in virtual enviornment:
+Run the Robokudo 
 ```
-source rk_venv/bin/activate
-source SUTURO_WSS/perception_ws/devel/setup.bash
-rosrun robokudo main.py _ae=demo_robocup _ros_pkg=suturo_rk_robocup
+[PHD][HSR]$ rosrun robokudo main.py _ae=my_demo _ros_pkg=human_perception
 ```
 load the package in the REPL (start the REPL with $ roslisp_repl):
 ```
