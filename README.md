@@ -65,7 +65,7 @@ On Alienware
  roslaunch suturo_demos suturo_bringup.launch upload_hsrb:=true use_rviz:=true
  roslaunch suturo_manipulation start_manipulation_easy.launch
 ```
-Run the Robokudo 
+Run the **Robokudo** 
 ```
 [PHD][HSR]$ rosrun robokudo main.py _ae=my_demo _ros_pkg=human_perception
 ```
@@ -85,7 +85,7 @@ SU-DEMOS> (hsrtospeak "hsrspeaker")
 ### Launch NLP python script
 In Aleinware, phd_workspaces/nlp_ws/src/gpsr_robocup package is used to launch the nlp scripts. source the workspace (~/phd_workspaces/nlp_ws [PHD][HSR]$ source devel/setup.bash) and then do following steps 
 #### (Speech Mode)
-Launch the HSR microphone (see below)
+Launch the **HSR microphone** (see below)
 Go into the workspace and launch gpsr_robocup package (if you want to give command by audio)
 ```
 roslaunch gpsr_robocup launch_all.xml
@@ -96,7 +96,7 @@ OR
 gpsr_robocup$ rosrun gpsr_robocup Subcriber_cram_msg.py
 gpsr_robocup$ rosrun gpsr_robocup Mainaudiowhisper.py
 ```
-Currently it ask for 3 commands. When Speech mode is activated it ask you for the command and then confirm it by asking "is it right or not?". if you say "yes" it will excute it and if "no" it asks you to type the command on terminal. if you say "stop" it will break everything.
+Currently it ask for ***3 commands***. When Speech mode is activated it ask you for the command and then confirm it by asking "is it right or not?". if you say "yes" it will excute it and if "no" it asks you to type the command on terminal. if you say "stop" it will break everything.
 (NOTE: if you want to specify the number of commands, goto gpsr_robocup/scripts/Mainaudiowhisper.py and set variable ``` gpsrstage1  = 3 ``` to that number)
 
 #### (Text Mode) 
@@ -113,10 +113,10 @@ Enter the Task 1 :Can you please give me the milk
 ## Some Stuff related to Cram
 GPSR-Robocup is depended on suturo-demo package. Following are the files that are related to it
 
-gpsr-ln.lisp (listen the data from python script).
-gpsr-plans.lisp (plans are defined in it).
-gpsr-knowledge.lisp (knowledge about poses and keywords).
-gpsr-pub.lisp (publish the data about plans).
+**gpsr-ln.lisp** (listen the data from python script).
+**gpsr-plans.lisp** (plans are defined in it).
+**gpsr-knowledge.lisp** (knowledge about poses and keywords).
+**gpsr-pub.lisp** (publish the data about plans).
 
 
 So the data send in a formate of string array which has following slot division:
@@ -147,7 +147,7 @@ if you want to add plans:
 			(cram-talker ?output)
 			)
 ```
-here plan title is SEARCH and plan-function is searching-object (Note that plan title is the name of intent defined in RASA files data/nlu.yml and domain.yml). cram-talker send the plan name to the subcriber of GPSR-NLP after plan succeeded. plan function output the "plan name" when it succeeded and "fail" when fails. e.g
+here plan title is SEARCH and plan-function is searching-object (**Note** that plan title is the name of intent defined in RASA files data/nlu.yml and domain.yml). cram-talker send the plan name to the subcriber of GPSR-NLP after plan succeeded. plan function output the "plan name" when it succeeded and "fail" when fails. e.g
 
 ``` lisp = 
 (defun searching-object (?object)
@@ -184,7 +184,7 @@ here plan title is SEARCH and plan-function is searching-object (Note that plan 
 						       (call-text-to-speech-action "Successfully perceived object")
 						       (return-from searching-object "search")))) ;;;; return plan name when it finish
 ```				    
-(NOTE) All plans take input in the form of keywords which are get resolved by the gpsr-knowledge.lisp. If you want to add any function or variables on which plans depends, please define them in gpsr-knowledge
+All plans take input in the form of **keywords** which are get resolved by the gpsr-knowledge.lisp**. If you want to add any function or variables on which plans depends, please define them in gpsr-knowledge
 
 ## HSR microphone
 The package audio_common can stream audio and play it on another device
