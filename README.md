@@ -86,11 +86,20 @@ SU-DEMOS> (hsrtospeak "hsrspeaker")
 
 ### Launch NLP python script
 In Aleinware, phd_workspaces/nlp_ws/src/gpsr_robocup package is used to launch the nlp scripts. source the workspace (~/phd_workspaces/nlp_ws [PHD][HSR]$ source devel/setup.bash) and then do following steps 
-#### (Audio Mode)
+#### (Speech Mode)
 Go into the workspace and launch gpsr_robocup package (if you want to give command by audio)
 ```
 roslaunch gpsr_robocup launch_all.xml
 ```
+OR
+
+```
+gpsr_robocup$ rosrun gpsr_robocup Subcriber_cram_msg.py
+gpsr_robocup$ rosrun gpsr_robocup Mainaudiowhisper.py
+```
+Currently it ask for 3 commands. When Speech mode is activated it ask you for the command and then confirm it by asking "is it right or not?". if you say "yes" it will excute it and if "no" it asks you to type the command on terminal. if you say "stop" it will break everything.
+(NOTE: if you want to specify the number of commands, goto gpsr_robocup/scripts/Mainaudiowhisper.py and set variable ``` gpsrstage1  = 3 ``` to that number)
+
 #### (Text Mode) 
 Go into the directory gpsr_robocup and in separate terminals, run the following nodes
 ```
