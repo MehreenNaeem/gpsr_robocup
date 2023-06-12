@@ -9,7 +9,7 @@ from std_msgs.msg import String
 ########################## MAIN CODE Audio ##########################################
 rospy.init_node("NLP_node")
 MyAudioreader.speak("Hi I am HSR")
-## TODO wait for door open and go to the starting point
+MyAudioreader.speak("Speech Mode is activated")
 gpsrstage1  = 3 ### INPUT set number of challanges
 MyAudioreader.speak("Going to perfrom " +  str(gpsrstage1) + " commands")
 

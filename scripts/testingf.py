@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from gpsr_robocup.Audioreader import MyAudioreader
 from gpsr_robocup.Audioreader.SpeechLanguageInterpretator import functionText
+from gpsr_robocup.Audioreader.SpeechLanguageInterpretator import start_gpsr
 from gpsr_robocup import _nlpCommands
 import rospy
 from std_msgs.msg import String
@@ -11,12 +12,12 @@ start_gpsr()    # 9 june
 
 def callbackstart(data):  # 12 june
     cram_str_listner = data.data
-     if cram_str_listner == 'START':
-         MyAudioreader.speak("Text mode is activated... ") # 9june
-         MyAudioreader.speak("Performing GPSR challange. Enter the number of tasks") ## 9 june
-         gpsrstage1  = int(input("Enter the total number of task: ")) ### INPUT set number of challanges
-         CmndNum = 0
-         taking_input(CmndNum+1)
+    if cram_str_listner == 'START':
+    	MyAudioreader.speak("Text mode is activated... ")
+    	MyAudioreader.speak("Performing GPSR challange. Enter the number of tasks")
+    	gpsrstage1  = int(input("Enter the total number of task: ")) ### INPUT set number of challanges
+    	CmndNum = 0
+    	taking_input(CmndNum+1)
 
 #MyAudioreader.speak("hello i am H S R")
 #MyAudioreader.speak("Text mode is activated... ")
@@ -35,8 +36,8 @@ def taking_input(number):
     MyAudioreader.speak(task_1)
     functionText(task_1)
 
-#CmndNum = 0
-#taking_input(CmndNum+1)
+##CmndNum = 0
+##taking_input(CmndNum+1)
 
 def callback(data):
     checktask = data.data
