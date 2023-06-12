@@ -107,6 +107,15 @@ def functionText(outputtext):
     print("*Task in progress*")
     Data_entering.CmdIntre(outputtext)
 
+def start_gpsr():  # 9 june
+    MyAudioreader.speak("Hi I am HSR") 
+    MyAudioreader.speak("waiting to start my task.") ## 9 june
+    MyAudioreader.speak("please type start ") ## 9 june
+    start_switch  = input("waiting to start my task... :  ") ## 9 june
+    pub = rospy.Publisher('Starting', _nlpCommands.nlpCommands, queue_size=10)
+    (rospy.Rate(5)).sleep()
+    for i in range(1) : pub.publish([start_switch,'TASK'])
+
 
 
 #text_gpsr = rospy.Subscriber("text_gpsr_command", String, callback)
