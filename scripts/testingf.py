@@ -7,9 +7,20 @@ from std_msgs.msg import String
 
 ########################## MAIN CODE TEXT ##########################################
 rospy.init_node("NLP_node")
-MyAudioreader.speak("hello i am H S R")
-MyAudioreader.speak("Text mode is activated... ")
-gpsrstage1  = int(input("Enter the total number of task: ")) ### INPUT set number of challanges
+start_gpsr()    # 9 june
+
+def callbackstart(data):  # 12 june
+    cram_str_listner = data.data
+     if cram_str_listner == 'START':
+         MyAudioreader.speak("Text mode is activated... ") # 9june
+         MyAudioreader.speak("Performing GPSR challange. Enter the number of tasks") ## 9 june
+         gpsrstage1  = int(input("Enter the total number of task: ")) ### INPUT set number of challanges
+         CmndNum = 0
+         taking_input(CmndNum+1)
+
+#MyAudioreader.speak("hello i am H S R")
+#MyAudioreader.speak("Text mode is activated... ")
+#gpsrstage1  = int(input("Enter the total number of task: ")) ### INPUT set number of challanges
 
 #list_cmnds = ['fetch a bowl','place the bowl', 'drop the spoon'] ### for 3 commands
 
@@ -24,8 +35,8 @@ def taking_input(number):
     MyAudioreader.speak(task_1)
     functionText(task_1)
 
-CmndNum = 0
-taking_input(CmndNum+1)
+#CmndNum = 0
+#taking_input(CmndNum+1)
 
 def callback(data):
     checktask = data.data
@@ -48,4 +59,5 @@ def callback(data):
 
 
 cram_listner = rospy.Subscriber("CRAMpub", String, callback)
+cram_listner = rospy.Subscriber("CRAMstart", String, callbackstart) # 12 june
 rospy.spin()
