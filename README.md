@@ -184,7 +184,7 @@ here plan title is SEARCH and plan-function is searching-object (**Note** that p
 						       (call-text-to-speech-action "Successfully perceived object")
 						       (return-from searching-object "search")))) ;;;; return plan name when it finish
 ```				    
-All plans take input in the form of **keywords** which are get resolved by the gpsr-knowledge.lisp**. If you want to add any function or variables on which plans depends, please define them in gpsr-knowledge
+All plans take input in the form of **keywords** which are get resolved by the **gpsr-knowledge.lisp**. If you want to add any function or variables on which plans depends, please define them in gpsr-knowledge
 
 ## HSR microphone
 The package audio_common can stream audio and play it on another device
