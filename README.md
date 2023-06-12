@@ -96,7 +96,7 @@ OR
 gpsr_robocup$ rosrun gpsr_robocup Subcriber_cram_msg.py
 gpsr_robocup$ rosrun gpsr_robocup Mainaudiowhisper.py
 ```
-Currently it ask for ***3 commands***. When Speech mode is activated it ask you for the command and then confirm it by asking "is it right or not?". if you say "yes" it will excute it and if "no" it asks you to type the command on terminal. if you say "stop" it will break everything.
+Currently it ask for ***3 commands***. When Speech mode is activated it ask you for the command and then confirm it by asking "is it right or not?". if you say "yes" it will excute it and if "no" it asks you to type the command on terminal. if you say **"stop"** it will break everything.
 (NOTE: if you want to specify the number of commands, goto gpsr_robocup/scripts/Mainaudiowhisper.py and set variable ``` gpsrstage1  = 3 ``` to that number)
 
 #### (Text Mode) 
