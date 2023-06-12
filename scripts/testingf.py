@@ -12,6 +12,7 @@ start_gpsr()    # 9 june
 
 def callbackstart(data):  # 12 june
     cram_str_listner = data.data
+    print(cram_str_listner)
     if cram_str_listner == 'START':
     	MyAudioreader.speak("Text mode is activated... ")
     	MyAudioreader.speak("Performing GPSR challange. Enter the number of tasks")
