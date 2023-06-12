@@ -152,12 +152,12 @@ rospy.Subscriber('/audio/audio', AudioData, callback, queue_size=10)
 
 
 def start_gpsr():  # 9 june
-    MyAudioreader.speak("Hi I am H SR ") 
+    MyAudioreader.speak("Hi I am H S R ") 
     MyAudioreader.speak("waiting to start my task.") ## 9 june
     MyAudioreader.speak("please type start ") ## 9 june
     start_switch  = input("waiting to start my task... :  ") ## 9 june
-    pub = rospy.Publisher('Starting', _nlpCommands.nlpCommands, queue_size=10)
+    pubstart = rospy.Publisher('Starting',_nlpCommands.nlpCommands, queue_size=10)
     (rospy.Rate(5)).sleep()
-    for i in range(1) : pub.publish([start_switch,'TASK'])
+    for i in range(1) : pubstart.publish([start_switch,'TASK'])
 
 
