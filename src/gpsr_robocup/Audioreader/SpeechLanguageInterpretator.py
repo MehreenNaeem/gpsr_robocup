@@ -108,7 +108,7 @@ def functionText(outputtext):
     Data_entering.CmdIntre(outputtext)
 
 def start_gpsr():  # 9 june
-    MyAudioreader.speak("Hi I am HSR") 
+    MyAudioreader.speak("Hi I am H SR ") 
     MyAudioreader.speak("waiting to start my task.") ## 9 june
     MyAudioreader.speak("please type start ") ## 9 june
     start_switch  = input("waiting to start my task... :  ") ## 9 june
