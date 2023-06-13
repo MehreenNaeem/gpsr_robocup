@@ -66,7 +66,7 @@ def planinterpreter(inputtext):
 
     ### long sentence into chunks
     punctuations = [',', '?', '!', ':', ';']
-    breaking_worlds = ['what', 'which', 'when', 'where', 'who', 'whom', 'whose', 'why', 'how', 'and']
+    breaking_worlds = ['what', 'when', 'where', 'who', 'whom', 'whose', 'why', 'how', 'and']
 
     # split on the basis of punctuations
 
