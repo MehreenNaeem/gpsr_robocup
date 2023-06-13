@@ -3,14 +3,21 @@
 from gpsr_robocup.Audioreader import MyAudioreader
 from gpsr_robocup.Audioreader.SpeechLanguageInterpretator import functionAudio
 from gpsr_robocup import _nlpCommands
+from gpsr_robocup.Audioreader.SpeechLanguageInterpretator import start_gpsr
 import rospy
 from std_msgs.msg import String
 
 ########################## MAIN CODE Audio ##########################################
 rospy.init_node("NLP_node")
+
+MyAudioreader.speak("Enter the total number of tasks") ## 9 june
+gpsrstage1  = int(input("Enter the total number of task: ")) ### INPUT set number of challanges
+
+start_gpsr()    # 9 june
+
 MyAudioreader.speak("Hi I am HSR")
 MyAudioreader.speak("Speech Mode is activated")
-gpsrstage1  = 3 ### INPUT set number of challanges
+##gpsrstage1  = 3 ### INPUT set number of challanges
 MyAudioreader.speak("Going to perfrom " +  str(gpsrstage1) + " commands")
 
 functionAudio(15)
