@@ -93,7 +93,7 @@ OR
 gpsr_robocup$ rosrun gpsr_robocup Subcriber_cram_msg.py
 gpsr_robocup$ rosrun gpsr_robocup Mainaudiowhisper.py
 ```
-Currently it ask for ***3 commands***. When Speech mode is activated it ask you for the command and then confirm it by asking "is it right or not?". if you say "yes" it will excute it and if "no" it asks you to type the command on terminal. if you say **"stop"** it will break everything.
+First enter the number of commands you want to perfrom (e.g Stage1 its 3) and type **"start"** to start the prcoess. Then it go to the starting position. When Speech mode is activated it ask you for the command and then confirm it by asking "is it right or not?". if you say "yes" it will excute it and if "no" it asks you to type the command on terminal. if you say **"stop"** it will break everything.
 (NOTE: if you want to specify the number of commands, goto gpsr_robocup/scripts/Mainaudiowhisper.py and set variable ``` gpsrstage1  = 3 ``` to that number)
 
 #### (Text Mode) 
@@ -102,9 +102,8 @@ Go into the directory gpsr_robocup and in separate terminals, run the following 
 gpsr_robocup$ rosrun gpsr_robocup Subcriber_cram_msg.py 
 gpsr_robocup$ rosrun gpsr_robocup testingf.py
 ```
-After running testingf node, it asks you for input in the terminal. First enter number of commands you want to excute in the whole demo e.g for gpsr-stage1 it is 3. Then it ask to type the task. e.g
+After running testingf node, it asks you for input in the terminal. First enter number of commands you want to excute in the whole demo e.g for gpsr-stage2 itss 5. Then it ask to type start to start the process and as a result it go to the starting position. Then ask to type the task. e.g
 ```
-Enter the total number of task: 3
 Enter the Task 1 :Can you please give me the milk
 ```
 ## Some Stuff related to Cram
@@ -191,12 +190,4 @@ To start the streaming launch on HSR desktop. first source the workspace in hsr 
 source /home/hsr-user/custom_controller_ws/devel/setup.bash
 roslaunch audio_capture capture_wave.launch
 ```
-To play on another device you can use
-```
-roslaunch audio_play play.launch
-```
 The audio is streamed on the topic /audio/audio.
-
-
-TODO
-- add reference nlp... rasa (source dict... roscore)
