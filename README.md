@@ -1,5 +1,8 @@
 # GPSR_NLP
 
+## Overview
+NLP takes command by two ways (text-mode and Speech-mode), both can converted commands into string and feed to RASA(https://github.com/MehreenNaeem/GPSR_RASA). RASA is a platform that sort the sentence's words into their defined categories. It consist of vocabulary of words wit their examples. After interpretation, NLP send the sorted dated to CRAM (https://github.com/MehreenNaeem/CRAM-GPSR). CRAM fill the parameters of plan with information and its knowledege. It also return the results of plan to the NLP so that it will decide what to do next.
+
 ## Dependencies
 ### Setup new RASA enviorment 
 install rasa via https://rasa.com/docs/rasa/installation/installing-rasa-open-source/
@@ -12,6 +15,7 @@ go into the directory and initialize it
 rasa init
 rasa train
 ```
+(NOTE: if you install rasa and it do not have related data. So after installation clone the following directory https://github.com/MehreenNaeem/GPSR_RASA. and do training so that model builds i.e creat models folder)
 ### In AlienWare (for ROBOcup team)
 I have install rasa in venv. i.e @home /rasa_rb. Activate the venv enviornment
 ```
