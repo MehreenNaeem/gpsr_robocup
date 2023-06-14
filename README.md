@@ -129,8 +129,9 @@ e.g 3) "how many people in the dining room are boys"
 ```['count', 'nil', 'nil', 'nil', 'boys', 'nil', 'nil', 'nil', 'nil', 'nil', 'nil', 'room', 'nil']```
 
 
-If the task is consist of more then one sentences e.g "find the bowl in the kitchen and give it on me", nlp divide it into two sentences i.e. "find the bowl in the kitchen" / "give it to me" and give them one by one to CRAM.
+If the task is consist of more then one sentences e.g "find the bowl in the kitchen and give it to me", nlp divide it into two sentences i.e. "find the bowl in the kitchen" / "give it to me" and give them one by one to CRAM.
 The gpsr-ln.lisp receives the data in the given string formate and save them in respective variables. then it match with the plans list and take variable according to the selected plan.
+Some of the sentences may carry **pronouns** e.g in above command "give it to me". So "it" is supposed to be an object for this we need **buffer knowledge**. In gpsr_ln following buffer variables are saved as a global variable such that **previous-objectname**
 ### add plans in CRAM
 if you want to add plans:
 - define them in gpsr-plans.lisp using defun
