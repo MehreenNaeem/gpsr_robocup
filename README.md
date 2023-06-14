@@ -15,7 +15,7 @@ go into the directory and initialize it
 rasa init
 rasa train
 ```
-(NOTE: if you install rasa newly, it does not contain the related data. So after installation clone the following directory https://github.com/MehreenNaeem/GPSR_RASA. and do training so that model builds i.e creat models folder and store in it)
+(NOTE: if you install rasa newly, it does not contain the related data. So after installation clone the following directory https://github.com/MehreenNaeem/GPSR_RASA. and do training so that model builds i.e it creates models folder and save trained models in it)
 ### In AlienWare (for ROBOcup team)
 I have install rasa in venv. i.e @home /rasa_rb. Activate the venv enviornment
 ```
