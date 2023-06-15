@@ -198,6 +198,7 @@ roslaunch audio_capture capture_wave.launch
 The audio is streamed on the topic /audio/audio.
 
 ## TroubleShooting
+### HSR Microphone
 sometimes while running Speech mode HSR may not listen to the commands and print some weird things e.g
 ```
 start recording...
