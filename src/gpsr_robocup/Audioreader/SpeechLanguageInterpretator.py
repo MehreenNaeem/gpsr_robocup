@@ -45,13 +45,14 @@ def confirmation(outputtext):
                 check = False
                 MyAudioreader.speak("Unable to understand")
                 break
-            elif (interruption_action):
-                check = 2
-                MyAudioreader.speak("Process is stopped")
-                break
+           # elif (interruption_action):
+            #    check = 2
+             #   MyAudioreader.speak("Process is stopped")
+              #  break
             else:
                 check = False
-                MyAudioreader.speak("Speak again ")
+                MyAudioreader.speak("Unable to understand")
+                break
             k += 1
         else:
             break
