@@ -57,6 +57,8 @@ Gtts :
 PyAudio :
 ```sudo apt install python3-pyaudio```
 
+### Audio drivers for HSR microphone
+https://github.com/ros-drivers/audio_common
 
 ## How to Run GPSR_NLP and perform gpsr task
 ### RASA 
