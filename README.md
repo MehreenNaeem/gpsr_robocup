@@ -199,7 +199,7 @@ The audio is streamed on the topic /audio/audio.
 
 ## TroubleShooting
 sometimes while running Speech mode HSR may not listen to the commands and print some weird things e.g
-´´´
+```
 start recording...
 recording stop...
 66
@@ -208,9 +208,9 @@ start recording...
 recording stop...
 26
  Thanks for watching.
- ´´´
+ ```
  if values is less than hundred its means HSR mircophone died, So restart the nodes in HSR. so normal output look like this
- ´´´
+```
  start recording...
 recording stop...
 1221
@@ -219,7 +219,7 @@ start recording...
 recording stop...
 264
  Yes.
-´´´
+``
 (NOTE: if it faces these type of error, for backup it shifted to text mode)
  
 
