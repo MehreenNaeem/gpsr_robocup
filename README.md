@@ -97,7 +97,7 @@ OR
 gpsr_robocup$ rosrun gpsr_robocup Subcriber_cram_msg.py
 gpsr_robocup$ rosrun gpsr_robocup Mainaudiowhisper.py
 ```
-First enter the number of commands you want to perfrom (e.g Stage1 its 3) and type **"start"** to start the prcoess. Then it go to the starting position. When Speech mode is activated it ask you for the command and then confirm it by asking "is it right or not?". if you say "yes" it will excute it and if "no" it asks you to type the command on terminal. if you say **"stop"** it will break everything.
+First enter the number of commands you want to perfrom (e.g Stage1 its 3) and type **"start"** to start the prcoess. Then it go to the starting position. When Speech mode is activated it ask you for the command and then confirm it by asking "is it right or not?". if you say "yes" it will excute it and if "no" it asks you to type the command on terminal.
 (NOTE: if you want to specify the number of commands, goto gpsr_robocup/scripts/Mainaudiowhisper.py and set variable ``` gpsrstage1  = 3 ``` to that number)
 
 #### (Text Mode) 
